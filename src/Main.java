@@ -18,7 +18,7 @@ public class Main {
                 new Person("Пол", "Маккартні", 54),
                 new Person("Джекі", "Чан", 75)
         );
-       // System.out.println(people);
+
         List<Account> accounts = List.of(
                 new Account("DE1234567890", new BigDecimal("100.00"), people.get(0)),
                 new Account("DE0987654321", new BigDecimal("2000000.00"), people.get(1)),
@@ -26,7 +26,7 @@ public class Main {
                 new Account("DE2222222222", new BigDecimal("5000000.00"), people.get(3)),
                 new Account("DE3333333333", new BigDecimal("7015000.00"), people.get(0))
         );
-       // System.out.println(accounts);
+
         Map<Person, List<Account>> personsAccountsMap = new HashMap<>();
         addAccountsToPerson(personsAccountsMap, people, accounts);
 
