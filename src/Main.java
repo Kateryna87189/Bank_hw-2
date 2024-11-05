@@ -37,8 +37,10 @@ public class Main {
 
         System.out.println("Список акаунтів: ");
         for (Account account:accounts){
+            System.out.println();
             System.out.println(account);
         }
+
 
         boolean hassErrors = checkForErrors(personsAccountsMap);
         System.out.println("мар має помилку: " + hassErrors);
@@ -58,16 +60,16 @@ public class Main {
     }
 
     public static boolean checkForErrors(Map<Person, List<Account>> map) {
-
+         boolean hassErrors = false;
         for (Map.Entry<Person, List<Account>> entry : map.entrySet()) {
             Person people = entry.getKey();
             for (Account account : entry.getValue()) {
                 if (!account.getOwner().equals(people)) {
 
-                    return  true;
+                    hassErrors =  true;
                 }
             }
         }
-        return false;
+        return hassErrors;
     }
 }
